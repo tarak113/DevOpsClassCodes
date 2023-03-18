@@ -15,14 +15,14 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'This is stage 2'
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
         
         stage('Code Review') {
             steps {
                 echo 'This is stage 3'
-                sh 'mvn pmd:pmd'
+                bat 'mvn pmd:pmd'
             }
             post{
                 success{
@@ -34,14 +34,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'This is stage 4'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         
         stage('packaging my code') {
             steps {
                 echo 'This is stage 5'
-                sh 'mvn package'
+                bat 'mvn package'
             }
         } 
         
